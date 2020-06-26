@@ -1,0 +1,149 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Portafolio{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/portfolio-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1 style="color: white">Clasificados</h1>
+<h1 style="color: black;">Comunidad Colmenita</h1>
+<span style="color: black;" class="subheading">Guía de servicios, productos y emprendimientos de toda la comunidad colmenita.</span>
+{% endblock %}
+
+{% block content %}
+    {% for projecte in projects %}
+        <!-- Proyecto -->
+        <div class="row project">  	
+
+          
+                <img width="800" height="800" class="img-fluid" src="{{projecte.image.url}}" alt="">
+                
+           
+        <!--    <div class="col-lg-3 col-md-4 offset-lg-1"> --> 
+         <!--       <img width="800" height="800" class="img-fluid" src="{{projecte.image.url}}" alt="">--> 
+                
+        <!--    </div> --> 
+            <div class="col-lg-8 col-md-9">
+                <h2 class="section-heading title">{{projecte.title}}</h2>   
+                
+                <font face="arial">
+                    
+                <p>{{projecte.description|linebreaks}}</p>
+                
+
+                <!-- TELEFONO -->
+
+                {% if projecte.telefono == none  %}
+                    
+                    
+
+
+                {% else %}
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/telefono.jpg' %}" alt="">  {{projecte.telefono}}</p>
+
+                {% endif %}
+
+                <!-- WHATSAPP -->
+
+                {% if projecte.whatsapp == none  %}
+                    
+                    
+
+                {% else %}
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/whatsapp.jpg' %}" alt="">  {{projecte.whatsapp}}</p>
+
+                {% endif %}
+
+
+
+                <!-- EMAIL -->
+
+                {% if projecte.email == none  %}
+                    
+
+                {% else %}
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/mail.jpg' %}" alt="">   {{projecte.email}}</p>
+
+                {% endif %}
+
+                <!-- WEB -->
+           
+                {% if projecte.link == none  %}
+
+                    
+
+                {% else %}
+
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/web.jpg' %}" alt="">  <a href="{{projecte.link}}"> {{projecte.link}}</a></p>
+
+                {% endif %}
+
+
+                <!-- Facebook -->
+           
+                {% if projecte.facebook == none  %}
+
+                    
+
+                {% else %}
+
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/facebook.jpg' %}" alt=""> <a href="{{projecte.facebook}}">{{projecte.facebook}}</a></p>
+
+                {% endif %}
+
+                <!-- Twitter -->
+           
+                {% if projecte.twitter == none  %}
+
+                    
+
+                {% else %}
+
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/twitter.jpg' %}" alt=""> <a href="{{projecte.twitter}}">{{projecte.twitter}}</a></p>
+
+                {% endif %}
+
+                <!-- INstagram -->
+           
+                {% if projecte.instagram == none  %}
+
+                    
+
+                {% else %}
+
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/instagram.jpg' %}" alt=""> <a href="{{projecte.instagram}}">{{projecte.instagram}}</a></p>
+
+                {% endif %}
+
+                <!-- Mercado Libre -->
+           
+                {% if projecte.mercado == none  %}
+
+                    
+
+                {% else %}
+
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/mercado.jpg' %}" alt=""> <a href="{{projecte.mercado}}">{{projecte.mercado}}</a></p>
+
+                {% endif %}
+
+                <!-- Youtube -->
+           
+                {% if projecte.youtube == none  %}
+
+                    
+
+                {% else %}
+
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/youtube.jpg' %}" alt=""> <a href="{{projecte.youtube}}">{{projecte.youtube}}</a></p>
+
+                {% endif %}
+
+
+
+
+                </font>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

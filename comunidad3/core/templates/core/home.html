@@ -1,0 +1,145 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Portada{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1 style="color: white;">Servicios</h1>
+<h1 style="color: black;">Comunidad Colmenita</h1>
+<span style="color: black;" class="subheading">Guía de servicios, productos y emprendimientos de toda la comunidad colmenita.</span>
+{% endblock %}
+
+{% block content %}
+    {% for clasi in clasif %}
+        <!-- Proyecto -->
+        <div class="row project">  	
+
+          
+                
+                
+           
+        <!--    <div class="col-lg-3 col-md-4 offset-lg-1"> --> 
+         <!--       <img width="800" height="800" class="img-fluid" src="{{clasi.image.url}}" alt="">--> 
+                
+        <!--    </div> --> 
+            <div class="col-lg-8 col-md-9">
+                <h2 class="section-heading title">{{clasi.title}}</h2>   
+                <img width="900" height="900" class="img-fluid" src="{{clasi.image.url}}" alt="">
+                <font face="arial">
+                    
+                <p>{{clasi.description|linebreaks}}</p>
+                
+
+                <!-- TELEFONO -->
+
+                {% if clasi.telefono == none  %}
+                    
+                    
+
+                {% else %}
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/telefono.jpg' %}" alt="">  {{clasi.telefono}}</p>
+
+                {% endif %}
+
+                <!-- WHATSAPP -->
+
+                {% if clasi.whatsapp == none  %}
+                    
+                    
+
+                {% else %}
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/whatsapp.jpg' %}" alt="">  {{clasi.whatsapp}}</p>
+
+                {% endif %}
+                <!-- EMAIL -->
+
+                {% if clasi.email == none  %}
+                    
+
+                {% else %}
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/mail.jpg' %}" alt="">   {{clasi.email}}</p>
+
+                {% endif %}
+
+                <!-- WEB -->
+           
+                {% if clasi.link == none  %}
+
+                    
+
+                {% else %}
+
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/web.jpg' %}" alt="">  <a href="{{clasi.link}}"> {{clasi.link}}</a></p>
+
+                {% endif %}
+
+
+                <!-- Facebook -->
+           
+                {% if clasi.facebook == none  %}
+
+                    
+
+                {% else %}
+
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/facebook.jpg' %}" alt=""> <a href="{{clasi.facebook}}">{{clasi.facebook}}</a></p>
+
+                {% endif %}
+
+                <!-- Twitter -->
+           
+                {% if clasi.twitter == none  %}
+
+                    
+
+                {% else %}
+
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/twitter.jpg' %}" alt=""> <a href="{{clasi.twitter}}">{{clasi.twitter}}</a></p>
+
+                {% endif %}
+
+                <!-- INstagram -->
+           
+                {% if clasi.instagram == none  %}
+
+                    
+
+                {% else %}
+
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/instagram.jpg' %}" alt=""> <a href="{{clasi.instagram}}">{{clasi.instagram}}</a></p>
+
+                {% endif %}
+
+                <!-- Mercado Libre -->
+           
+                {% if clasi.mercado == none  %}
+
+                    
+
+                {% else %}
+
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/mercado.jpg' %}" alt=""> <a href="{{clasi.mercado}}">{{clasi.mercado}}</a></p>
+
+                {% endif %}
+
+                <!-- Youtube -->
+           
+                {% if clasi.youtube == none  %}
+
+                    
+
+                {% else %}
+
+                    <p><img width="50" height="50" class="img-fluid" src="{% static 'core/img/youtube.jpg' %}" alt=""> <a href="{{clasi.youtube}}">{{clasi.youtube}}</a>       </p>
+
+                {% endif %}
+
+
+
+
+                </font>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
